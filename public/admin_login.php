@@ -44,10 +44,10 @@ include '../includes/header.php';
   </div>
 
   <?php if ($error): ?>
-  <div class="alert alert-error">
-    <i class="fas fa-exclamation-triangle"></i>
-    <?php echo htmlspecialchars($error); ?>
-  </div>
+    <div class="alert alert-error">
+      <i class="fas fa-exclamation-triangle"></i>
+      <?php echo htmlspecialchars($error); ?>
+    </div>
   <?php endif; ?>
 
   <form method="POST" action="">
@@ -76,31 +76,24 @@ include '../includes/header.php';
       <i class="fas fa-sign-in-alt"></i> Login
     </button>
   </form>
-
-  <div style="margin-top: 2rem; text-align: center; color: #666;">
-    <small>
-      <strong>Default Login:</strong><br>
-      Username: admin<br>
-      Password: admin123
-    </small>
-  </div>
 </div>
 
 <script>
-function togglePassword() {
-  const passwordInput = document.getElementById('password');
-  const toggleIcon = document.getElementById('toggleIcon');
+  function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
 
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-    toggleIcon.classList.remove('fa-eye');
-    toggleIcon.classList.add('fa-eye-slash');
-  } else {
-    passwordInput.type = 'password';
-    toggleIcon.classList.remove('fa-eye-slash');
-    toggleIcon.classList.add('fa-eye');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleIcon.classList.remove('fa-eye');
+      toggleIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      toggleIcon.classList.remove('fa-eye-slash');
+      toggleIcon.classList.add('fa-eye');
+    }
   }
-}
 </script>
 
 <?php include '../includes/footer.php'; ?>
+
